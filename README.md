@@ -1,6 +1,5 @@
 ﻿# Module 1: Introduction to DevOps: Automate Everything to Focus on What Really Matters
 
-
 ## Learning Objectives
 
 This project aims at showing use cases where a DevOps mindset is bringing value to a software project by automating it, which decreases the amount of manual work and increases the development speed. It focuses on why automation is useful and helps speeding a development lifecycle.
@@ -16,6 +15,11 @@ After this project, you should be able to:
 ## Prerequisites
 
 The following elements are required In addition to the previous module (**“Module 0: Linux Fundamentals, Code management with Git, GitHub and the GitFlow pattern”**) prerequisites.
+
+
+## Lifecycle
+
+A section added for task 2 to describe the different steps.
 
 ### Concepts
 
