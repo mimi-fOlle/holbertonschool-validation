@@ -9,4 +9,4 @@ clean:
 #Create a new blog post whose filename and title come from POST_TITLE and POST_NAME
 post:
 	@hugo new posts/$(POST_NAME).md
-	@sed -i 's/title: .*/title: "$(POST_TITLE)"/g' content/posts/$(POST_NAME).md	
+	@sed -i 's/title: .*/title:"$(POST_TITLE)"/' content/posts/$(POST_NAME).md	
