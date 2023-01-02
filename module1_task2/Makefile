@@ -2,7 +2,7 @@ build: ##Generate the website from the markdown and configuration files in the d
 	@hugo --theme=ananke
 
 clean: ##Cleanup the content of the dist/.
-	@rm -r ./dist/*
+	@rm -r dist/*
 
 post: ##Create a new blog post whose filename and title come from POST_TITLE and POST_NAME
 	@hugo new posts/$(POST_NAME).md

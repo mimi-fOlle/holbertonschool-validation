@@ -21,6 +21,11 @@ The following elements are required In addition to the previous module (**“Mod
 
 A section added for task 2 to describe the different steps.
 
+-   Build: For generae the website
+-   Clean: Cleanup the content
+-   Post: Create a new blog post
+-   Help: Print out the list of targets' usage
+
 ### Concepts
 
 You should have a basic knowledge of the following concepts:
