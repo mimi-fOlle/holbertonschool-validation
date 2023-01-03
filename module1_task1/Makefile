@@ -1,6 +1,6 @@
 #Generate the website from the markdown and configuration files in the dist/.
 build:
-	@hugo 
+	@hugo --theme=ananke 
 
 #Cleanup the content of the dist/.
 clean:
