@@ -9,5 +9,5 @@ post: ##Create a new blog post whose filename and title come from POST_TITLE and
 	@sed -i 's/title: .*/title:"$(POST_TITLE)"/' content/posts/$(POST_NAME).md
 
 help: ##Print out the list of targets and their usage
-	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
-	@echo help: Show this help usage
+	@egrep -h '\s##\s' $(MAKEFILE_LIST) | \
+	awk 'BEGIN {FS = ":.*?## "}; {printf "\033[34m%-15s\033[0m %s\n", $$1, $$2}'
