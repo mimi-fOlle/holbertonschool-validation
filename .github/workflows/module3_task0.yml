@@ -1,14 +1,14 @@
 name: module3_task0
-on: 
+on:
   schedule:
   # Triggers the workflow every day at 5:30 UTC
   # * is a special character in YAML so you have to quote this string
-  - cron: '30 5 * * *'
-  push
+    - cron: '30 5 * * *'
+  push:
 jobs:
   runs-on: ubuntu-latest
   steps:
-     # Clone the repo
-     - run: git clone https://github.com/mimi-fOlle/holbertonschool-validation.git
-     # Execute the command make help
-     - run: make help
+    # Clone the repo
+    - run: git clone https://github.com/mimi-fOlle/holbertonschool-validation.git
+    # Execute the command make help
+    - run: make help
