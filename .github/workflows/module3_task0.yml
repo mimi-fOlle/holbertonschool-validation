@@ -2,15 +2,17 @@
 name: module3_task0
 on:
   schedule:
-    - cron: 30 5 * * *
+  # Triggers the workflow every day at 5:30 UTC
+  # * is a special character in YAML so you have to quote this string
+    - cron: '30 5 * * *'
   push:
-    branches: -master
+    branches:
+      -master
 jobs:
-  module3_task0:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - run: cd module3_task0
-      - run: make help
+      - uses: actions/checkout@v2
+      - name: Validate Makefile
+        run: make help
         working-directory: module3_task0
