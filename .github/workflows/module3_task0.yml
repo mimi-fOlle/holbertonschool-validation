@@ -9,7 +9,7 @@ on:
 jobs:
   runs-on: ubuntu-latest
   steps:
-    # Clone the repo
-    - run: git clone https://github.com/mimi-fOlle/holbertonschool-validation.git
-    # Execute the command make help
-    - run: make help
+    -uses: actions/checkout@v2
+    -name: Clone the repo and make help
+     run:git clone https://github.com/mimi-fOlle/holbertonschool-validation.git
+     run:make help
