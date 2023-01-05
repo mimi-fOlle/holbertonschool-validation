@@ -6,10 +6,11 @@ on:
   push:
     branches: -master
 jobs:
-  build:
+  module3_task0:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Validate Makefile
-        run: make help
+      - name: Checkout
+        uses: actions/checkout@v3
+      - run: cd module3_task0
+      - run: make help
         working-directory: module3_task0
