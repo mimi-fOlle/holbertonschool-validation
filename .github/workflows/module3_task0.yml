@@ -10,11 +10,10 @@ on:
   
 jobs:
   build:
-    name: Validate Makefile
     runs-on: ubuntu-latest
+
     steps:
+      - uses: actions/checkout@v2
       - name: Validate Makefile
-        run: |
-          cd holbertonschool-validation
-          make help
+        run: make help
         working-directory: module3_task0
