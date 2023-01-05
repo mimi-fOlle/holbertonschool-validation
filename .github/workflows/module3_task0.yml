@@ -4,12 +4,16 @@ on:
   # Triggers the workflow every day at 5:30 UTC
   # * is a special character in YAML so you have to quote this string
     - cron: '30 5 * * *'
-  push: null
+  push:
+    branches:
+      -master
   
 jobs:
-  runs-on: ubuntu-latest
-  steps:
-    # Clone the repo
-    - run: git clone https://github.com/mimi-fOlle/holbertonschool-validation.git
-    # Execute the command make help
-    - run: make help
+  build:
+    name: Validate Makefile
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate Makefile
+        run: |
+          cd holbertonschool-validation
+          make help
