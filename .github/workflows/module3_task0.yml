@@ -17,3 +17,4 @@ jobs:
         run: |
           cd holbertonschool-validation
           make help
+        working-directory: module3_task0
