@@ -9,8 +9,8 @@ on:
     - cron: '0 0 * * *'
 
 jobs:
-  build:
-    runs-on: ubuntu-lastest
+  module3_task0:
+    runs-on: ubuntu-latest
     steps:
       - name: Clone the repository
         uses: actions/checkout@v3
