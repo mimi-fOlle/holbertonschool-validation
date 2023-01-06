@@ -5,19 +5,19 @@ on:
     branches:
       - master
   schedule:
-    - cron: 0 0 * * *
+    - cron: 0 5 * * *
 jobs:
   module3_task1:
     runs-on: ubuntu-18.04
     steps:
-      - name: Clone and checkout the repo
-        uses: actions/checkout@v2
-      - name: Execute setup.sh
+      - name: Clone and check out repo
+        uses: actions/checkout@v3
+      - name: Run setup script to install Hugo
         run: |
           cd module3_task1/
           sudo ./setup.sh
-          shell: bash
-      - name: Execute build in Makefile
+        shell: bash
+      - name: Use build in Makefile
         run: |
           cd module3_task1/
           sudo make build
