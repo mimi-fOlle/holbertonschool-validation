@@ -11,6 +11,11 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      - name: Exectute setup.sh
-        working-directory: ./module3_task1
-        run: ./setup.sh
+      - name: Execute setup.sh
+        run: |
+          cd module3_task1/
+          ./setup.sh
+      - name: Execute build in Makefile
+        run: |
+          cd module3_task2
+          make build 
