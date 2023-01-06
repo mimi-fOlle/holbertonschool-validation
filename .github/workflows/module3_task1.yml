@@ -1,0 +1,16 @@
+---
+name: module3_task0
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '0 0 * * *'
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Exectute setup.sh
+        working-directory: ./module3_task1
+        run: ./setup.sh
