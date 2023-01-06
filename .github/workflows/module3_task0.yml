@@ -1,18 +1,21 @@
 ---
 name: module3_task0
+
 on:
-  schedule:
-  # Triggers the workflow every day at 5:30 UTC
-  # * is a special character in YAML so you have to quote this string
-    - cron: '30 5 * * *'
   push:
     branches:
-      -master
+      - master
+  schedule:
+    - cron: '0 0 * * *'
+
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-lastest
     steps:
-      - uses: actions/checkout@v2
-      - name: Validate Makefile
-        run: make help
-        working-directory: module3_task0
+      - name: Clone the repository
+        uses: actions/checkout@v3
+
+      - name: Navigate to project directory
+        run: |
+          cd module3_task0/
+          make help
