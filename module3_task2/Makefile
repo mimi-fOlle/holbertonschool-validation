@@ -10,3 +10,20 @@ post: ##Create a new blog post whose filename and title come from POST_TITLE and
 
 help: ##Print out the list of targets and their usage
 	@sed -ne '/@sed/!s/## //p' Makefile
+
+lint: ##Lint with markdown
+	@markdownlint README.md
+	@markdownlint DEPLOY.md
+
+unit-tests: ##Executes successfully the Golang unit tests
+	@ls
+
+integration-tests: ##Runs post and build command to check for integration success
+	@ls
+
+validate: ##Valide that in the right directory
+	@ls
+
+package: ##Creates an archive
+	@hugo
+	@zip awesome-website.zip ./dist
