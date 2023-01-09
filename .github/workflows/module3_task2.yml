@@ -14,10 +14,6 @@ jobs:
     steps:
       - name: Clone and check out repo
         uses: actions/checkout@v3
-      - name: Use Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
         
       - name: Run setup script to install Hugo
         run: |
@@ -40,3 +36,11 @@ jobs:
           make integration-tests
           make validate
           make clean
+          
+      - name: Build archive
+        # If none of previous steps have failed, success returns true
+        if: ${{ success()}}
+        uses: actions/upload-artifact@v3
+        with:
+          name: upload-package
+          path: module3_task2/awesome-website.zip
