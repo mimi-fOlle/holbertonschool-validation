@@ -21,13 +21,13 @@ jobs:
       - name: Use build in Makefile
         run: |
           cd module3_task1/
-          make build
+          sudo make build
       - name: Create new post
         run: |
           cd module3_task1
-          make post
+          sudo make post
       - name: Clean up
         run: |
           cd module3_task1
-          make clean
+          sudo make clean
           
