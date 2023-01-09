@@ -22,7 +22,7 @@ integration-tests: ##Runs post and build command to check for integration succes
 	@ls
 
 validate: ##Valide that in the right directory
-	@ls
+	@pwd
 
 package: ##Creates an archive
 	@hugo
