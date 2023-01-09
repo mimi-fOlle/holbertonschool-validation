@@ -1,0 +1,35 @@
+---
+name: module3_task2
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: 0 5 * * *
+
+jobs:
+  module3_task1:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Clone and check out repo
+        uses: actions/checkout@v3
+      - name: Run setup script to install Hugo
+        run: |
+          cd module3_task2/
+          chmod 755 setup.sh
+          ./setup.sh
+        shell: bash
+        
+      - name: Install markdown
+        run: npm install -g markdownlint-cli
+        
+      - name: Validation Makefile
+        run: |
+          cd module3_task2/
+          make lint
+          make build
+          make package
+          make POST_TITLE="Test Title" POST_NAME="Test-name" post
+          make unit-tests
+          make integration-tests
+          make validate
