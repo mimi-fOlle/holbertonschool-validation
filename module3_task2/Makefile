@@ -12,8 +12,8 @@ help: ##Print out the list of targets and their usage
 	@sed -ne '/@sed/!s/## //p' Makefile
 
 lint: ##Lint with markdown
-	@markdownlint README.md
-	@markdownlint DEPLOY.md
+	@markdownlint README.md DEPLOY.md
+	@shellcheck setup.sh
 
 unit-tests: ##Executes successfully the Golang unit tests
 	@ls
