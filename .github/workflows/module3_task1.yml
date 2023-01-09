@@ -6,8 +6,6 @@ on:
       - master
   schedule:
     - cron: 0 5 * * *
-    
-permissions: read-all
 
 jobs:
   module3_task1:
