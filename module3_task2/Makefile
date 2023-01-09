@@ -12,18 +12,20 @@ help: ##Print out the list of targets and their usage
 	@sed -ne '/@sed/!s/## //p' Makefile
 
 lint: ##Lint with markdown
-	@markdownlint README.md DEPLOY.md
+	@markdownlint README.md
+	@markdownlint DEPLOY.md
 	@shellcheck setup.sh
 
-unit-tests: ##Executes successfully the Golang unit tests
-	@ls
+unit-tests: ##Runs different makefile recipes
+	@make build
+	@make clean
 
 integration-tests: ##Runs post and build command to check for integration success
-	@ls
+	@ls dist/
 
 validate: ##Valide that in the right directory
-	@ls
+	@pwd
 
 package: ##Creates an archive
-	@hugo
+	@make build
 	@zip awesome-website.zip ./dist
