@@ -15,10 +15,19 @@ jobs:
       - name: Run setup script to install Hugo
         run: |
           cd module3_task1/
+          chmod 755 setup.sh
           sudo ./setup.sh
         shell: bash
       - name: Use build in Makefile
         run: |
           cd module3_task1/
-          sudo make build
+          make build
+      - name: Create new post
+        run: |
+          cd module3_task1
+          make post
+      - name: Clean up
+        run: |
+          cd module3_task1
+          make clean
           
