@@ -6,6 +6,9 @@ on:
       - master
   schedule:
     - cron: 0 5 * * *
+    
+permissions: read-all
+
 jobs:
   module3_task1:
     runs-on: ubuntu-18.04
@@ -16,18 +19,12 @@ jobs:
         run: |
           cd module3_task1/
           chmod 755 setup.sh
-          sudo ./setup.sh
+          ./setup.sh
         shell: bash
-      - name: Use build in Makefile
+      - name: Validation Makefile
         run: |
           cd module3_task1/
-          sudo make build
-      - name: Create new post
-        run: |
-          cd module3_task1/
-          sudo make POST_TITLE="Test" POST_NAME="name" post
-      - name: Clean up
-        run: |
-          cd module3_task1/
-          sudo make clean
-          
+          make help
+          make build
+          make clean
+          make POST_TITLE="Test" POST_NAME="name" post
