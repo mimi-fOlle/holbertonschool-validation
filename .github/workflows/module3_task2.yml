@@ -40,11 +40,3 @@ jobs:
           make integration-tests
           make validate
           make clean
-          
-      - name: Upload production-ready build files
-        # If none of previous steps have failed, success returns true
-        if: ${{ success()}}
-        uses: action/upload-artifact@v3
-        with:
-          name: Build package
-          path: module3_task2/awesome-website.zip
