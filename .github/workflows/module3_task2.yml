@@ -2,14 +2,13 @@
 name: module3_task2
 on:
   push:
-    branches:
+    branches: 
       - master
-      - main
   schedule:
     - cron: 0 5 * * *
 
 jobs:
-  module3_task1:
+  module3_task2:
     runs-on: ubuntu-18.04
     steps:
       - name: Clone and check out repo
