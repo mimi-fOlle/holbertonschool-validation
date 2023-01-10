@@ -12,7 +12,7 @@ sudo curl -L https://github.com/gohugoio/hugo/releases/download/v0.109.0/hugo_ex
 # Install the latest version of 'Hugo'
 sudo apt install ./last.deb
 
-sudo npm install -g markdown-cli
+npm install -g markdown-cli
 
 sudo rm last.deb
 
