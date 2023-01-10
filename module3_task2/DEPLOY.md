@@ -2,15 +2,13 @@
 
 ### What is in the archive and how to unarchive it?
 
-The archive contains the latest build and the api binary. The archive can be found under either in uploads or releases if a tags is used v1.0.0
-
-### To unarchive the package
-
-Run the command: unzip awesome-website.zip
+-   In the `awesome-website.zip` archive you will encounter the `dist/` folder
+-   To unarchive it in your current directory use the command line: `unzip awesome-website.zip`
 
 ### What are the commands to start and stop the application?
 
-To run the application use: hugo server
+-   To generate (start) the go-hugo website run the command: `make build`
+-   To clean (stop) the go-hugo website run the command: `make clean`
 
 ### How to customize where the application logs are written?
 
@@ -18,4 +16,5 @@ Logs are created by the github actions and stored in the respective runner
 
 ### How to “quickly” verify that the application is running (healthcheck)?
 
-Use the url in modern browser: http://localhost:1313
+-   To veryfy is the go-hugo wesite is runnig correctly run the command: `hugo server`
+-   Then verify the status of the website in your localhost by clicking the `http://localhost:1313/` given by the previous step
