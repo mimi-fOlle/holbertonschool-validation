@@ -43,4 +43,3 @@ To execute the Makefile by using `make`.
 - Always run the make target `package`
 - Archive the generated package only on the principal branch
 - Be enabled in GitHub Actions and must have been run successfully
-
