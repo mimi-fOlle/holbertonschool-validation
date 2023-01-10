@@ -2,15 +2,13 @@
 name: module3_task2
 on:
   push:
-    # branches: [master]
-    paths:
-      - 'module3_task2/**'
+    branches:
+      - main
   schedule:
     - cron: 0 5 * * *
 
 jobs:
-  # This workflow contains a single job called "build"
-  build:
+  module3_task2_make_build_workflow:
     runs-on: ubuntu-18.04
     
     steps:
@@ -27,10 +25,17 @@ jobs:
           cd module3_task2/
           make lint
           make build
-          make package
+          make POST_TITLE=Test POST_NAME='TestSuccess' post
           make unit-tests
-          make integration-tests
+
+      - name: Integration testing
+        run: |
+          cd module3_task2
           make validate
+          make integration-tests
+          make unit-tests
+          make package
+          make clean
           
       - name: Build archive
         # If none of previous steps have failed, success returns true
