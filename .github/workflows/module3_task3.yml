@@ -37,6 +37,14 @@ jobs:
           make package
           make clean
 
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: 1.0.0
+          files: |
+            module3_task3/awesome-website.zip
+            module3_task3/DEPLOY.md
+
       - name: Build archive
         # If none of previous steps have failed, success returns true
         if: ${{ success()}}
