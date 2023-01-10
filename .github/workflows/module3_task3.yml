@@ -1,5 +1,5 @@
 ---
-name: module3_task2
+name: module3_task3
 on:
   push:
     branches: [main, master]
@@ -7,7 +7,7 @@ on:
     - cron: 0 5 * * *
 
 jobs:
-  module3_task2:
+  module3_task3:
     runs-on: ubuntu-18.04
 
     steps:
@@ -16,12 +16,12 @@ jobs:
 
       - name: Run setup script to install Hugo
         run: |
-          cd module3_task2/
+          cd module3_task3/
           ./setup.sh
 
       - name: Validation Makefile
         run: |
-          cd module3_task2/
+          cd module3_task3/
           make lint
           make build
           make POST_TITLE=Test POST_NAME='TestSuccess' post
@@ -29,7 +29,7 @@ jobs:
 
       - name: Integration testing
         run: |
-          cd module3_task2
+          cd module3_task3
           make validate
           make integration-tests
           make unit-tests
