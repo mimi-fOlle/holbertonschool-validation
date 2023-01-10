@@ -58,11 +58,11 @@ jobs:
       - name: deploy
         uses: nwtgck/actions-netlify@v1.2
         with:
-          publish-dir: './module3_task5/dist'
+          publish-dir: "./module3_task5/dist"
           production-branch: main
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: '🚀 Deployed on'
-          publish-message: '🎉 Published on'
+          deploy-message: "🚀 Deployed on"
+          publish-message: "🎉 Published on"
           enable-pull-request-comment: true
           enable-commit-comment: true
           overwrites-pull-request-comment: true
@@ -70,4 +70,3 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         timeout-minutes: 1
-        
