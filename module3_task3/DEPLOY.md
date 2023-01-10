@@ -19,3 +19,7 @@ Logs are created by the github actions and stored in the respective runner
 - To veryfy is the go-hugo wesite is runnig correctly run the command: `hugo server`
 - Check it out on local host `http://localhost:1313`
 
+### Releases
+
+New release is created with the awesome-website.zip archive,
+pointing to the tag 1.0.0
