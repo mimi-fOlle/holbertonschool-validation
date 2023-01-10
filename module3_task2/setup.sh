@@ -1,18 +1,18 @@
 #!/bin/bash
 
 # Update and install 'Hugo' and 'Make'
-sudo apt-get update && apt-get install -y hugo make
-
-# Install 'curl'
-apt-get install curl -y
+apt-get update && apt-get install -y make wget
 
 # Download lastest release of 'Hugo'
-curl -L https://github.com/gohugoio/hugo/releases/download/v0.109.0/hugo_extended_0.109.0_linux-amd64.deb -o hugo.deb
+wget https://github.com/gohugoio/hugo/releases/download/v0.109.0/hugo_extended_0.109.0_Linux-64bit.tar.gz
+tar -xvf hugo_extended_0.109.0_Linux-64bit.tar.gz hugo
 
-# Install the latest version of 'Hugo'
-sudo apt install ./hugo.deb
+mv hugo /usr/local/bin/
+rm hugo_extended_0.109.0_Linux-64bit.tar.gz
 
-sudo rm hugo.deb
+# Install markdownlint and zip tools
+apt-get install zip -y
+npm install -g markdownlint-cli -y
 
 # Build the website
 make build
