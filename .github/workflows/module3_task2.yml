@@ -2,14 +2,17 @@
 name: module3_task2
 on:
   push:
-    branches: 
-      - master
+    # branches: [master]
+    paths:
+      - 'module3_task2/**'
   schedule:
     - cron: 0 5 * * *
 
 jobs:
-  module3_task2:
+  # This workflow contains a single job called "build"
+  build:
     runs-on: ubuntu-18.04
+    
     steps:
       - name: Clone and check out repo
         uses: actions/checkout@v3
@@ -17,13 +20,8 @@ jobs:
       - name: Run setup script to install Hugo
         run: |
           cd module3_task2/
-          chmod 755 setup.sh
           ./setup.sh
-        shell: bash
-        
-      - name: Install markdown
-        run: npm install -g markdownlint-cli
-        
+                
       - name: Validation Makefile
         run: |
           cd module3_task2/
@@ -33,7 +31,6 @@ jobs:
           make unit-tests
           make integration-tests
           make validate
-          make clean
           
       - name: Build archive
         # If none of previous steps have failed, success returns true
