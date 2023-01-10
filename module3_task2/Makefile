@@ -14,14 +14,15 @@ help: ##Print out the list of targets and their usage
 lint: ##Lint with markdown
 	@markdownlint README.md
 	@markdownlint DEPLOY.md
-	@shellcheck setup.sh
 
 unit-tests: ##Runs different makefile recipes
+	@make POST_TITLE='TEST' POST_NAME='Test' post
 	@make build
 	@make clean
 
 integration-tests: ##Runs post and build command to check for integration success
-	@ls dist/
+	@hugo
+	@sudo ls dist/
 
 validate: ##Valide that in the right directory
 	@pwd

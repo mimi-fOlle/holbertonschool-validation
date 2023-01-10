@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Update and install 'Hugo' and 'Make'
-sudo apt-get update && apt-get install -y hugo make
+sudo apt-get update && apt-get install -y hugo make shellcheck && npm install -g markdownlint-cli
 
 # Install 'curl'
 apt-get install curl -y
@@ -11,8 +11,6 @@ sudo curl -L https://github.com/gohugoio/hugo/releases/download/v0.109.0/hugo_ex
 
 # Install the latest version of 'Hugo'
 sudo apt install ./last.deb
-
-npm install -g markdown-cli
 
 sudo rm last.deb
 
