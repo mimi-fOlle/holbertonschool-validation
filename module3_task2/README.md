@@ -9,11 +9,11 @@
 
 ## Lifecycle
 
-A section added for task 2 to describe the different steps.
+To execute the Makefile by using `make`.
 
 -   build: Generate the website from the markdown and configuration files in the directory `dist/`. 
 -   clean: Cleanup the content of the directory `dist/`
--   post: Create a new blog post whose filename and title come from the environment variables POST_TITLE and POST_NAME.
+-   post: Create a new blog post whose filename and title come from the environment variables `POST_TITLE` and `POST_NAME`.
 -   help: Print out the list of targets' usage
 -   package: Compress archive `awesome-website.zip`
 -   unit-tests: Runs several make command, expected correct output.
@@ -23,9 +23,13 @@ A section added for task 2 to describe the different steps.
 ## Workflow
 
 -   Clone the repository
--   Position yourself in the correct directory and execute the command make help to validate that the Makefile is present and implements the help target.
+-   Position yourself in the correct directory and execute the command `make help` to validate that the Makefile is present and implements the help target.
 -   Build Workflow
 -   Help Workflow
+
+## Help Workflow
+-   In this directory, we're going to configure automatic actions to be performed when something happen to the repository.
+-   Using Github Actions to ensure CI/CL pipeline (build starts, TEST, BUILD, PUSH, DEPLOY)
 
 ### This workflow must be triggered:
 
