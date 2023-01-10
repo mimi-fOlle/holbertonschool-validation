@@ -17,6 +17,7 @@ jobs:
       - name: Run setup script to install Hugo
         run: |
           cd module3_task3/
+          chmod 755 setup.sh
           ./setup.sh
 
       - name: Validation Makefile
