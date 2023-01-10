@@ -9,16 +9,16 @@ on:
 jobs:
   module3_task2:
     runs-on: ubuntu-18.04
-    
+
     steps:
       - name: Clone and check out repo
         uses: actions/checkout@v3
-        
+
       - name: Run setup script to install Hugo
         run: |
           cd module3_task2/
           ./setup.sh
-                
+
       - name: Validation Makefile
         run: |
           cd module3_task2/
@@ -35,7 +35,7 @@ jobs:
           make unit-tests
           make package
           make clean
-          
+
       - name: Build archive
         # If none of previous steps have failed, success returns true
         if: ${{ success()}}
