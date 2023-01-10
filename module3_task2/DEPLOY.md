@@ -17,4 +17,4 @@ Logs are created by the github actions and stored in the respective runner
 ### How to “quickly” verify that the application is running (healthcheck)?
 
 -   To veryfy is the go-hugo wesite is runnig correctly run the command: `hugo server`
--   Then verify the status of the website in your localhost by clicking the `http://localhost:1313/` given by the previous step
+-   Then verify the status of the website in your localhost by clicking the [http://localhost:1313/] given by the previous step
