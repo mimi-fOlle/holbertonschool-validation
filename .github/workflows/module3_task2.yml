@@ -31,7 +31,6 @@ jobs:
           make lint
           make build
           make package
-          make POST_TITLE="Test Title" POST_NAME="Test-name" post
           make unit-tests
           make integration-tests
           make validate
